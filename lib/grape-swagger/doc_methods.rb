@@ -118,6 +118,8 @@ module GrapeSwagger
       get "#{mount_path}/:name" do
         I18n.locale = params[:locale] || I18n.default_locale
 
+        pp target_class.combined_namespace_routes
+
         combined_routes = target_class.combined_namespace_routes[params[:name]]
         error!({ error: 'named resource not exist' }, 400) if combined_routes.nil?
 
