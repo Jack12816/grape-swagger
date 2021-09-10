@@ -106,7 +106,7 @@ module Grape
 
         if path == '/v1/users/{id}' && verb == :put
           pp '----'
-          pp route
+          pp route.params
           pp '----'
         end
 
