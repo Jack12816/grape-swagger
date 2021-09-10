@@ -102,9 +102,14 @@ module Grape
 
         verb, method_object = method_object(route, options, path)
 
-        pp '----'
-        pp path
-        pp '----'
+
+
+        if path == '/v1/users/{id}'
+          pp '----'
+          pp verb, path
+          pp '----'
+        end
+
 
         if @paths.key?(path.to_s)
           @paths[path.to_s][verb] = method_object
