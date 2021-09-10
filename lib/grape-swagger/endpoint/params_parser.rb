@@ -11,6 +11,12 @@ module GrapeSwagger
 
       def initialize(params, settings, endpoint)
         @params = params
+
+        pp '-----'
+        pp 'i was here'
+        pp params
+        pp '-----'
+
         @settings = settings
         @endpoint = endpoint
       end
