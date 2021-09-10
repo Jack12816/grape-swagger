@@ -103,7 +103,7 @@ module Grape
         verb, method_object = method_object(route, options, path)
 
         pp '----'
-        pp route
+        pp path
         pp '----'
 
         if @paths.key?(path.to_s)
