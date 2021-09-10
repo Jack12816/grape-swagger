@@ -102,6 +102,10 @@ module Grape
 
         verb, method_object = method_object(route, options, path)
 
+        pp '----'
+        pp method_object
+        pp '----'
+
         if @paths.key?(path.to_s)
           @paths[path.to_s][verb] = method_object
         else
@@ -348,12 +352,6 @@ module Grape
     end
 
     def merge_params(route)
-
-      pp '-----'
-      pp route.params
-      pp '-----'
-
-
       param_keys = route.params.keys
       route.params.delete_if { |key| key.is_a?(String) && param_keys.include?(key.to_sym) }.to_a
     end
